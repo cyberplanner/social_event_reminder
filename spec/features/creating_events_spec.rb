@@ -15,10 +15,9 @@ feature 'Events' do
     visit '/'
     click_link('New Event')
     fill_in 'Title', with: 'Graduation'
-    select '2017', :from => 'date'
-    select '12', :from => 'date'
-    select '31', :from => 'date'
-    # select('2017/12/31', :from => 'Date')
+    select('2017', :from => 'event_date_1i')
+    select('December', :from => 'event_date_2i')
+    select('31', :from => 'event_date_3i')
     click_button('Create Event')
     expect(page).to have_content 'Graduation'
     expect(page).to have_content '2017-12-31'

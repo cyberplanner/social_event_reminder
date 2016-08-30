@@ -1,5 +1,12 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :title %>
+  <%= f.label :date_ok %>
   <%= f.input :date %>
   <%= f.button :submit %>
 <% end %>
+
+
+<!--
+:date_of_birth, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 12, discard_day: true,
+                              order: [:month, :year] %> -->
