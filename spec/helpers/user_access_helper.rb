@@ -17,3 +17,12 @@ end
 def sign_out
  click_link 'Sign out'
 end
+
+def create_event
+  click_link('New Event')
+  fill_in 'Title', with: 'Graduation'
+  select('2017', :from => 'event_date_1i')
+  select('December', :from => 'event_date_2i')
+  select('31', :from => 'event_date_3i')
+  click_button 'Create Event'
+end

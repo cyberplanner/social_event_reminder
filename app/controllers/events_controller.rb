@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+
+
   def index
     @events = Event.all
   end
@@ -11,6 +13,7 @@ class EventsController < ApplicationController
     @event = Event.create(event_params)
     if @event.save
       flash[:success] = "Successfully created the event"
+      current_user.events << @event
       redirect_to @event
     else
       flash[:alert] = "Something went wrong"

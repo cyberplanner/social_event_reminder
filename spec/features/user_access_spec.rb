@@ -32,5 +32,8 @@ feature 'User access' do
       expect(page).not_to have_link('New Event')
     end
 
+    
+
+
   end
 end
