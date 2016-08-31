@@ -4,6 +4,7 @@ feature 'Events' do
   background do
     event = create(:event, title: "John's Birthday", date: "15-5-2017")
     event = create(:event, title: "Jane's Birthday", date: "16-6-2017")
+    sign_up
   end
   scenario 'user can delete an event' do
     visit '/'
