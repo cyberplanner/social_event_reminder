@@ -3,7 +3,7 @@
 
 <% if @events.any? %>
   <% @events.each do |event| %>
-    <h2><%= event.title %></h2>
+  <h2><%= link_to "#{event.title}", event_path(event) %></h2>
     <p><%= event.date %></p>
   <% end %>
 <% end %>
