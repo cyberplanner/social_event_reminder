@@ -27,5 +27,10 @@ feature 'User access' do
       expect(page).not_to have_link('Sign out')
     end
 
+    scenario 'user cannot see the new post link unless signed in' do
+      sign_out
+      expect(page).not_to have_link('New Event')
+    end
+
   end
 end

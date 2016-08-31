@@ -27,4 +27,5 @@ feature 'Events' do
     expect(page).to have_content("Something went wrong")
     expect(current_path).to eq '/events'
   end
+
 end

@@ -7,4 +7,5 @@ feature 'viewing the events' do
     expect(page).to have_content('FamilyConnect')
     expect(page).to have_link('New Event')
   end
+
 end
