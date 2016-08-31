@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :event do
     title "Birthday"
-    date "30/12/2017"
+    date Date.parse('31-12-2017')
   end
 end
