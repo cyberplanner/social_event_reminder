@@ -2,9 +2,6 @@
 
 
 
-<% if @events.any? %>
-  <% @events.each do |event| %>
-  <h2><%= link_to "#{event.title}", event_path(event) %></h2>
-    <p><%= event.date %></p>
-  <% end %>
+<% if @events.any? && user_signed_in? %>
+  <%= render "events_view" %>
 <% end %>
