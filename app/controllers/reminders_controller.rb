@@ -15,6 +15,7 @@ class RemindersController < ApplicationController
   # GET /reminders/new
   def new
     @reminder = Reminder.new
+    @event = Event.find(params[:event_id])
   end
 
   # GET /reminders/1/edit
@@ -24,11 +25,13 @@ class RemindersController < ApplicationController
   # POST /reminders
   # POST /reminders.json
   def create
-    @reminder = Reminder.new(reminder_params)
+    @event = Event.find(params[:event_id])
+    @reminder = @event.reminders.create(reminder_params)
+
 
     respond_to do |format|
       if @reminder.save
-        format.html { redirect_to @reminder, notice: 'Reminder was successfully created.' }
+        format.html { redirect_to @event, notice: 'Reminder was successfully created.' }
         format.json { render :show, status: :created, location: @reminder }
       else
         format.html { render :new }
@@ -69,6 +72,6 @@ class RemindersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reminder_params
-      params.require(:reminder).permit(:name, :phone_number, :time, :date)
+      params.require(:reminder).permit(:name, :phone_number, :time)
     end
 end
