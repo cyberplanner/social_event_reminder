@@ -3,4 +3,5 @@
 <% if current_user.events.include?(@event) %>
 <%= link_to "Edit #{ @event.title }", edit_event_path %>
 <%= link_to "Delete #{ @event.title }", event_path(@event), method: :delete %>
+<%= link_to "Remind Me", new_event_reminder_path(@event) %>
 <% end %>
