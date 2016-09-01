@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
-
+gem 'dotenv'
+gem 'twilio-ruby'
+# Use delayed job for running background jobs
+gem 'delayed_job_active_record'
+# Need daemons to start delayed_job
+gem 'daemons'
 gem 'bootstrap-datepicker-rails'
 gem 'simple-form-datepicker'
 gem 'simple_form'
@@ -42,6 +47,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec-collection_matchers'
   gem 'shoulda-matchers'
+
 
 end
 

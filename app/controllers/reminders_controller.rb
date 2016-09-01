@@ -27,8 +27,6 @@ class RemindersController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
     @reminder = @event.reminders.create(reminder_params)
-
-
     respond_to do |format|
       if @reminder.save
         format.html { redirect_to @event, notice: 'Reminder was successfully created.' }
