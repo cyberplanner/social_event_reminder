@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'viewing all event reminders' do
-  scenario 'user can view all reminders related to the event' do
+  scenario 'after creating a reminder, user is taken to list of all reminders' do
     sign_up
     create_event
     click_link 'Create a reminder'
@@ -13,6 +13,16 @@ feature 'viewing all event reminders' do
     select('10', :from => 'reminder_time_4i')
     select('10', :from => 'reminder_time_5i')
     click_button 'Create Reminder'
-    expect(current_path).to eq event_reminders_path
+    expect(page).to have_content('Reminders for Graduation')
+    expect(page).to have_content('my bro')
+    click_link 'Home'
+    click_link 'Graduation'
+    click_link 'Reminders'
+    expect(page).to have_content('Reminders for Graduation')  
+
   end
+
+
+
+
 end

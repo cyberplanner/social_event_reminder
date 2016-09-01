@@ -12,8 +12,7 @@ class RemindersController < ApplicationController
   # GET /reminders/1
   # GET /reminders/1.json
   def show
-    @event = Event.find(params[:event_id])
-    @reminder = @event.reminders.find(params[:event_id])
+
   end
 
   # GET /reminders/new
@@ -40,7 +39,6 @@ class RemindersController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @reminder.errors, status: :unprocessable_entity }
-        byebug
       end
     end
   end
@@ -69,7 +67,7 @@ class RemindersController < ApplicationController
     end
   end
 
-    Use callbacks to share common setup or constraints between actions.
+
     def set_reminder
       @reminder = Reminder.find(params[:id])
     end

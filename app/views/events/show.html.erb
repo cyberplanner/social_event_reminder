@@ -6,3 +6,5 @@
 
 <% end %>
 <%= link_to "Create a reminder", new_event_reminder_path(@event) %>
+
+<h4><%= link_to "Reminders", "#{@event.id}/reminders" %></h4>
