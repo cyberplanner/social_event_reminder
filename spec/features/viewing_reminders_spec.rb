@@ -1,11 +1,9 @@
 require 'rails_helper'
 
-feature 'Reminders' do
-  scenario 'user can create a reminder' do
+feature 'viewing all event reminders' do
+  scenario 'user can view all reminders related to the event' do
     sign_up
     create_event
-    visit '/'
-    click_link 'Graduation'
     click_link 'Create a reminder'
     fill_in 'Name', with: 'my bro'
     fill_in 'Phone number', with: '3389764453'
@@ -15,6 +13,6 @@ feature 'Reminders' do
     select('10', :from => 'reminder_time_4i')
     select('10', :from => 'reminder_time_5i')
     click_button 'Create Reminder'
-    expect(page).to have_content('Reminder was successfully created')
+    expect(current_path).to eq event_reminders_path
   end
 end
