@@ -7,26 +7,42 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<ul>
-    <li>
-      <%= link_to "Home", root_path %>
-    </li>
-  <%if user_signed_in? %>
-    <li>
-      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-    </li>
-    <li>
-      <%= link_to "New Event", new_event_path %>
-    </li>
-  <%else%>
-    <li>
-      <%= link_to "Sign up", new_user_registration_path %>
-    </li>
-    <li>
-      <%= link_to "Sign in", new_user_session_path %>
-    </li>
-  <%end%>
-</ul>
+  <nav class="navbar navbar-default">
+  <div class="navbar-container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-target="#bs-navbar-collapse-1" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand">
+        <%= link_to (image_tag "http://freefall4film.com/_MA_course/img/fc-logo-sm.png", class:'img-responsive'), root_path %>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+      <%if user_signed_in? %>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        </li>
+        <li>
+          <%= link_to "New Event", new_event_path %>
+        </li>
+      <%else%>
+        <li>
+          <%= link_to "Sign up", new_user_registration_path %>
+        </li>
+        <li>
+          <%= link_to "Sign in", new_user_session_path %>
+        </li>
+      <%end%>
+    </ul>
+    </div>
+  </div>
+</nav>
 
 <p class="notice">
   <% flash.each do |name, msg| %>

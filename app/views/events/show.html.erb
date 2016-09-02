@@ -1,10 +1,14 @@
-<h2><%= @event.title %></h2>
-<p><%= @event.date %></p>
-<% if current_user.events.include?(@event) %>
-<%= link_to "Edit #{ @event.title }", edit_event_path %>
-<%= link_to "Delete #{ @event.title }", event_path(@event), method: :delete %>
+<div class="form-wrapper">
+  <h2><%= @event.title %></h2>
+  <p><%= @event.date %></p>
+  <% if current_user.events.include?(@event) %>
+  <%= link_to "Edit #{ @event.title }", edit_event_path %>
+  <%= link_to "Delete #{ @event.title }", event_path(@event), method: :delete %>
 
-<% end %>
-<%= link_to "Create a reminder", new_event_reminder_path(@event) %>
+
+  <% end %>
+
+  <%= link_to "Create a reminder", new_event_reminder_path(@event), class: "btn btn-default" %>
+</div>
 
 <h4><%= link_to "Reminders", "#{@event.id}/reminders" %></h4>
