@@ -3,8 +3,13 @@ Rails.application.routes.draw do
   resources :events do
     resources :reminders
   end
-  devise_for :users, :controllers => { registrations: 'registrations' }
-  resources :users, :only => [:show, :index]
+  devise_for :users, :controllers => { registrations: 'registrations' } do
+
+  end
+  resources :users, :only => [:show, :index, :update, :edit] do
+    resources :addresses
+  end
+
 
 
 

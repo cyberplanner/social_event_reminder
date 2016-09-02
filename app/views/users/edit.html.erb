@@ -1,0 +1,12 @@
+<div class="form-wrapper">
+  <%= simple_form_for (@user) do |f| %>
+    <%= f.input :username %>
+    <%= f.input :birthday %>
+    <%= f.button :submit %>
+  <% end %>
+  <br />
+
+
+<%= link_to "Update Address", new_user_address_path(@user) %>
+
+</div>

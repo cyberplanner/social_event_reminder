@@ -1,0 +1,11 @@
+<div class="form-wrapper">
+  <h1 class="text-center text-primary">Address:</h1>
+  <%= simple_form_for [@user, @address] do |f| %>
+    <%= f.input :line_one %>
+    <%= f.input :line_two %>
+    <%= f.input :postcode %>
+    <%= f.button :submit %>
+  <% end %>
+
+
+</div>
