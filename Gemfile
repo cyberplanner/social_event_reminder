@@ -5,6 +5,7 @@ gem 'twilio-ruby'
 gem 'delayed_job_active_record'
 # Need daemons to start delayed_job
 gem 'daemons'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap-datepicker-rails'
 gem 'simple-form-datepicker'
 gem 'simple_form'
