@@ -15,6 +15,8 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'https://fonts.googleapis.com/css?family=Baloo+Chettan|Baloo+Paaji|Open+Sans';
+
 body {
   background-color: #fafafa;
   font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
@@ -31,6 +33,7 @@ body {
   .navbar-nav li a {
     color: #2c3e50;
     font-size: 17px;
+    font-family: 'Baloo Chettan', cursive;
   }
 }
 .navbar-container {
@@ -54,11 +57,13 @@ body {
 }
 
 .event-title {
+  font-family: 'Baloo Paaji', cursive;
   height: 64px;
   padding: 14px 20px;
   color: #125688;
   font-size: 15px;
   line-height: 18px;
+
   .thumbnail {}
   .name {
     display: block;
@@ -92,6 +97,6 @@ body {
 }
 
 .home-logo {
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
 }
