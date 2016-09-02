@@ -1,0 +1,8 @@
+<div class="form-wrapper">
+  <h2 class="text-primary">My Family</h2>
+  <% @users.each do |user| %>
+  <div class="text text-primary">
+  <%= link_to user.username, user %><hr>
+  </div>
+  <% end %>
+</div>

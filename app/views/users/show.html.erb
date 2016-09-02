@@ -1,0 +1,9 @@
+<div class="form-wrapper">
+  <h1 class="text-center">Name: <%= @user.username %></h1>
+  <h2>Email: <%= @user.email %></h2>
+  <h2>Birthday: <%= @user.birthday %></h2>
+  <h2>Address: </h2>
+  <% if current_user == @user %>
+    <button type="button" name="button" class="btn btn-success">Update Profile</button>
+  <% end %>
+</div>
