@@ -1,7 +1,8 @@
-<h1>FamilyConnect</h1>
-
-
-
-<% if @events.any? && user_signed_in? %>
-  <%= render "events_view" %>
-<% end %>
+<div class="event-wrapper row">
+  <img src="http://freefall4film.com/_MA_course/img/fc-logo-01.png" class="home-logo image-responsive text-center">
+  <% if @events.any? && user_signed_in? %>
+    <div class="event">
+    <%= render "events_view" %>
+    </div>
+  <% end %>
+</div>

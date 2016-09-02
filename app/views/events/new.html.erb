@@ -1,8 +1,12 @@
-<%= simple_form_for @event do |f| %>
-  <%= f.input :title %>
-  <%= f.input :date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-wrapper">
+  <h1 class="text-center text-primary">New Event</h1>
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :title %>
+    <%= f.input :date %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
+
 
 
 <!--
