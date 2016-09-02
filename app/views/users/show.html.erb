@@ -2,8 +2,15 @@
   <h1 class="text-center text-success">Name: <%= @user.username %></h1>
   <h2 class="text-muted">Email: <%= @user.email %></h2>
   <h2 class="text-muted">Birthday: <%= @user.birthday %></h2>
-  <h2 class="text-muted">Address: </h2>
+  <%if @user.address != nil %>
+    <h2 class="text-muted">Address: </h2>
+    <h4 class = "text-muted"><%= @user.address.line_one %></h4>
+    <h4 class = "text-muted"><%= @user.address.line_two %></h4>
+    <h4 class = "text-muted"><%= @user.address.postcode %></h4>
+  <%end%>
   <% if current_user == @user %>
-    <button type="button" name="button" class="btn btn-success">Update Profile</button>
+    <!-- <button type="button" name="button" class="btn btn-success">Update Profile</button> -->
+    <%= link_to "Update Profile", edit_user_path %>
   <% end %>
 </div>
+  
