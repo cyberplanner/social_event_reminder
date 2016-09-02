@@ -28,9 +28,9 @@ class RemindersController < ApplicationController
   # POST /reminders
   # POST /reminders.json
   def create
-
+    Time.zone = reminder_params[:time_zone]
     @event = Event.find(params[:event_id])
-    @reminder = @event.reminders.create(reminder_params)
+    @reminder = @event.reminders.new(reminder_params)
 
     respond_to do |format|
       if @reminder.save
@@ -67,6 +67,7 @@ class RemindersController < ApplicationController
     end
   end
 
+private
 
     def set_reminder
       @reminder = Reminder.find(params[:id])
@@ -74,6 +75,6 @@ class RemindersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reminder_params
-      params.require(:reminder).permit(:name, :phone_number, :time, :event_id)
+      params.require(:reminder).permit(:name, :phone_number, :time, :time_zone, :event_id)
     end
 end
