@@ -1,15 +1,18 @@
 class RemindersController < ApplicationController
+
   before_action :set_reminder, only: [:show, :edit, :update, :destroy]
 
   # GET /reminders
   # GET /reminders.json
   def index
-    @reminders = Reminder.all
+    @event = Event.find(params[:event_id])
+    @reminders = @event.reminders.all
   end
 
   # GET /reminders/1
   # GET /reminders/1.json
   def show
+
   end
 
   # GET /reminders/new
@@ -25,11 +28,13 @@ class RemindersController < ApplicationController
   # POST /reminders
   # POST /reminders.json
   def create
+
     @event = Event.find(params[:event_id])
     @reminder = @event.reminders.create(reminder_params)
+
     respond_to do |format|
       if @reminder.save
-        format.html { redirect_to @event, notice: 'Reminder was successfully created.' }
+        format.html { redirect_to event_reminders_path(@event), notice: 'Reminder was successfully created.' }
         format.json { render :show, status: :created, location: @reminder }
       else
         format.html { render :new }
@@ -62,14 +67,13 @@ class RemindersController < ApplicationController
     end
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_reminder
       @reminder = Reminder.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reminder_params
-      params.require(:reminder).permit(:name, :phone_number, :time)
+      params.require(:reminder).permit(:name, :phone_number, :time, :event_id)
     end
 end
