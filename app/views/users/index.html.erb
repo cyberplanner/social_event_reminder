@@ -1,0 +1,6 @@
+<div class="form-wrapper">
+  <h2 class="text-primary">My Family</h2>
+  <% @users.each do |user| %>
+  <%= link_to user.email, user, class: "text-center text-primary" %><hr>
+  <% end %>
+</div>

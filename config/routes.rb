@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :reminders
   end
   devise_for :users
+  resources :users, :only => [:show, :index]
 
 resource :messages do
   collection do
