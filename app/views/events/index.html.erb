@@ -1,8 +1,13 @@
 <div class="event-wrapper row">
-  <img src="http://freefall4film.com/_MA_course/img/fc-logo-01.png" class="home-logo image-responsive text-center">
+
+
   <% if @events.any? && user_signed_in? %>
     <div class="event">
     <%= render "events_view" %>
     </div>
+  <% else %>
+  <div class="text-center col-md-8 col-md-offset-2 well">
+    <img src="http://freefall4film.com/_MA_course/img/fc-logo-01.png" class="home-logo image-responsive text-center">
+  </div>
   <% end %>
 </div>

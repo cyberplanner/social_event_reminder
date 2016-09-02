@@ -1,6 +1,6 @@
 <% @events.each do |event| %>
   <div class="post-title">
-    <h2><%= link_to "#{event.title}", event_path(event) %></h2>
+    <h2> <i class="glyphicon glyphicon-th-large"></i> <%= link_to "#{event.title}", event_path(event) %></h2>
   </div>
   <div class="cube center-block">
     <p class="date-data"><%= event.date %></p>

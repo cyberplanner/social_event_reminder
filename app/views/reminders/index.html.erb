@@ -1,28 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="form-wrapper">
+  <p id="notice"><%= notice %></p>
 
-<h1>Reminders for <%= @event.title%></h1>
+  <h1>Reminders for <%= @event.title%></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone number</th>
-      <th>Time</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reminders.each do |reminder| %>
-
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= reminder.name%></td>
-        <td><%= reminder.phone_number %></td>
-        <td><%= reminder.time %></td>
+        <th>Name</th>
+        <th>Phone number</th>
+        <th>Time and Date</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @reminders.each do |reminder| %>
+
+        <tr>
+          <td><%= reminder.name%></td>
+          <td><%= reminder.phone_number %></td>
+          <td><%= reminder.time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+</div>
